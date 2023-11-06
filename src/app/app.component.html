@@ -5,22 +5,26 @@
 
   <p *ngIf="loading" class="text-center text-lg">Loading...</p>
 
-  <input 
-    type="text" 
-    name="filter" 
+  <input
+    type="text"
+    name="filter"
     class="mb-2 border py-2 px-4 w-full"
     [(ngModel)]="term"
-    id="filter">
+    id="filter"/>
 
-  <div *ngIf="products$ | async as products"
+  <div
+    *ngIf="products$ | async as products"
     class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-    <app-product *ngFor="let product of products | filterProducts: term; let i = index;"
-    [product]="product"
-    class="group">
-  </app-product>
+    <app-product
+      *ngFor="let product of products | filterProducts : term; let i = index"
+      [product]="product"
+      class="group">
+    </app-product>
   </div>
+  <button class="rounded-full bg-red-700 text-white fixed right-5 bottom-5 py-2 px-4"
+    (click)="modalService.open()">&#43;</button>
 </div>
-<!-- *ngIf="modalService.isVisible$ | async" -->
-<app-modal  title="Create new Product">
+
+<app-modal *ngIf="modalService.isVisible$ | async" title="Create new Product">
   <app-create-product></app-create-product>
 </app-modal>
