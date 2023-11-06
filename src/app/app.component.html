@@ -19,5 +19,8 @@
     class="group">
   </app-product>
   </div>
-  
 </div>
+<!-- *ngIf="modalService.isVisible$ | async" -->
+<app-modal  title="Create new Product">
+  <app-create-product></app-create-product>
+</app-modal>
