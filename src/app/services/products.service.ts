@@ -26,7 +26,7 @@ export class ProductsService {
   get products() {
     return this.http.get<Product[]>('https://fakestoreapi.com/products', {
       params: new HttpParams({
-        fromObject: { limit: 5 }
+        fromObject: { limit: 10 }
       })
     }).pipe(
       delay(2000),
