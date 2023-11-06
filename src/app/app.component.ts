@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'ng-t16 t';
   loading = false;
+  term = '';
   products$!: Observable<Product[]>;
   // products: Product[] = [];
 
