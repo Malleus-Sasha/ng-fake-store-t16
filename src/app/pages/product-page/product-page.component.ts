@@ -10,6 +10,7 @@ import { ProductsService } from 'src/app/services/products.service';
   styleUrls: ['./product-page.component.scss']
 })
 export class ProductPageComponent implements OnInit {
+  title = 'fake store';
   loading = false;
   term = '';
   products$!: Observable<Product[]>;
